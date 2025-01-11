@@ -43,24 +43,33 @@ give next content from here
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
-   cd your-repository-name
+   git clone https://github.com/chaudhariGaurav07/Product-Compare.git
+   cd Product-Compare
 2. Install frontend dependencies:
+   
+   ```bash
    cd frontend
    npm install
 3. Install backend dependencies:
+   
+   ```bash
    cd backend
    npm install
 4. Set up environment variables for the backend (create a .env file in the server folder):
+   
+   ```bash
    PORT=5000
    DB_URI=your-mongodb-uri
    JWT_SECRET=your-jwt-secret
 5. Run both the frontend and backend:
    -Start the frontend (client side):
+      
+   ```bash
       cd frontend
       npm start
-   -Start the backend (server side):
+  -Start the backend (server side):
+      
+   ```bash
       cd backend
-      npm start
-If both are running check http://localhost:3000 🚀
-    
+      npm start 
+
