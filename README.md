@@ -65,11 +65,11 @@ give next content from here
    -Start the frontend (client side):
       
    ```bash
-      cd frontend
-      npm start
+   cd frontend
+   npm start
   -Start the backend (server side):
       
    ```bash
-      cd backend
-      npm start 
+   cd backend
+   npm start
 
