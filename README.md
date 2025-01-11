@@ -31,3 +31,36 @@ This project is an **e-commerce product comparison website** built with **React*
   - **MongoDB** (for storing user authentication data)
   - **JWT** (for user authentication)
 
+## Installation
+
+### Prerequisites
+
+Make sure you have **Node.js** and **npm** installed. If not, you can install them from [here](https://nodejs.org/).
+give next content from here
+
+### Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-repository-name.git
+   cd your-repository-name
+2. Install frontend dependencies:
+   cd frontend
+   npm install
+3. Install backend dependencies:
+   cd backend
+   npm install
+4. Set up environment variables for the backend (create a .env file in the server folder):
+   PORT=5000
+   DB_URI=your-mongodb-uri
+   JWT_SECRET=your-jwt-secret
+5. Run both the frontend and backend:
+   -Start the frontend (client side):
+      cd frontend
+      npm start
+   -Start the backend (server side):
+      cd backend
+      npm start
+If both are running check http://localhost:3000 🚀
+    
