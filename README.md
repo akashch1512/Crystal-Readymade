@@ -36,7 +36,7 @@ This project is an **e-commerce product comparison website** built with **React*
 - **Backend**:
   - **Node.js** (for the server-side logic)
   - **Express** (for creating the API and handling routes)
-  - **Cheerio** (for web scraping)
+  
 
 - **Others**:
   - **MongoDB** (for storing user authentication data)
