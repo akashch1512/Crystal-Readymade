@@ -1,4 +1,3 @@
-/* Define CSS variables for theming */
 :root {
   --primary-color: #9b00c6;
   --secondary-color: #7200b7;
@@ -8,7 +7,6 @@
   --accent-gradient: linear-gradient(90deg, #ff00ff, #7aa5a5, #a0e1a0, #ff00ff); /* Accent gradient */
 }
 
-/* Main container for developers */
 .developers-container {
   margin-top: 100px;
   display: flex;
@@ -22,7 +20,6 @@
   animation: fadeIn 1.2s ease-in;
 }
 
-/* Styling for the h1 element */
 .developers-container h1 {
   font-size: 2.5rem;
   color: var(--primary-color);
@@ -33,19 +30,18 @@
   line-height: 1.2;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   background: var(--accent-gradient);
-  -webkit-background-clip: text; /* Make gradient apply only to the text */
-  color: transparent; /* Make text color transparent to show gradient */
+  background-clip: text; 
+  color: transparent; 
 }
 
-/* Hover effects for heading */
+
 .developers-container h1:hover {
   background: var(--accent-gradient);
-  -webkit-background-clip: text; 
-  color: transparent; /* Ensure gradient stays */
+  background-clip: text; 
+  color: transparent; 
   transform: scale(1.1); 
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .developers-container h1 {
     font-size: 2rem;
@@ -62,7 +58,6 @@
   }
 }
 
-/* Fade-in animation for developers container */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -85,7 +80,6 @@
   100% { border-color: #ff0054; }
 }
 
-/* Developer card styles */
 .developer-card {
   background: #333, #020304;
   backdrop-filter: blur(5px);
@@ -96,7 +90,7 @@
   width: 280px;
   height: 350px;
   display: flex;
-  border: 4px solid var(--accent-gradient); /* Use gradient for border */
+  border: 4px solid var(--accent-gradient); 
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -104,13 +98,11 @@
   border: 1px solid transparent;  
 }
 
-/* Hover effects for developer card */
 .developer-card:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(155, 0, 198, 0.5);
 }
 
-/* Developer card image */
 .developer-card img {
   width: 100%;
   height: 200px;
@@ -120,12 +112,10 @@
   transition: transform 0.3s ease;
 }
 
-/* Hover effect for image */
 .developer-card:hover img {
   transform: scale(1.1);
 }
 
-/* Developer card heading */
 .developer-card h2 {
   font-size: 1.5rem;
   margin: 10px 0;
@@ -133,10 +123,9 @@
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   background: var(--accent-gradient);
   -webkit-background-clip: text;
-  color: transparent; /* Apply gradient to text */
+  color: transparent; 
 }
 
-/* Developer card paragraph */
 .developer-card p {
   font-size: 1rem;
   color: var(--text-muted);
@@ -144,7 +133,6 @@
   line-height: 1.5;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .developers-container {
     flex-direction: column;

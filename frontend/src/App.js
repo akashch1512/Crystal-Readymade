@@ -13,14 +13,19 @@ import useScrollAnimation from "./components/useScrollAnimation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 function App() {
+   // State variable to track user login status
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Stores available product categories
   const [categories] = useState([
     "electronics",
     "jewelry",
     "men_clothing",
     "women_clothing",
   ]);
+  //state variable - is a special type of variable that allows you to store and manage data within a component
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
@@ -32,6 +37,7 @@ function App() {
 
   const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
+//code for login and registraion logic
   const handleLogin = (username) => {
     setUsername(username);
     setIsLoggedIn(true);
@@ -42,7 +48,7 @@ function App() {
     alert(`Welcome, ${username}!`);
     setIsLoggedIn(true);
   };
-
+  //product search logic
   const handleSearch = async () => {
     if (!selectedCategory || !searchTerm || selectedPlatforms.length === 0) {
       setError(
@@ -81,6 +87,7 @@ function App() {
     setIsMobileMenuOpen((prevState) => !prevState);
   };
 
+//animations logic
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -91,6 +98,7 @@ function App() {
     });
   }, []);
 
+  // navabr component
   const Navbar = () => (
     <nav className={`navbar ${isMobileMenuOpen ? "active" : ""}`}>
       <div className="logo">ProCompare</div>
@@ -118,7 +126,7 @@ function App() {
       </div>
     </nav>
   );
-
+  // ProductsSection Component
   const ProductsSection = () => (
     <section id="products" className="product-list">
       {error && <p className="error-message">{error}</p>}
@@ -134,7 +142,7 @@ function App() {
       )}
     </section>
   );
-
+  // CategorySelector Component
   const CategorySelector = () => (
     <div className="category-selector-container" data-aos="fade-right">
       <h3 data-aos="fade-right">
@@ -153,7 +161,7 @@ function App() {
       ))}
     </div>
   );
-
+  // PlatformSelector Component
   const PlatformSelector = () => {
     const platformLogos = {
       flipkart: "flipkart.png",
@@ -185,6 +193,7 @@ function App() {
     );
   };
 
+//logic for BenefitsSection
   const BenefitsSection = () => {
     useScrollAnimation();
 

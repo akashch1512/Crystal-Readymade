@@ -10,7 +10,7 @@ const flipkartData = {
     { id: 8, name: 'HP Envy x360', description: 'A powerful 2-in-1 convertible laptop.', price: 80000, rating: 4.6, imageUrl: 'https://via.placeholder.com/150?text=HP+Envy+x360', url: 'https://www.flipkart.com' },
     { id: 9, name: 'Sony WH-1000XM5', description: 'Top-tier noise-canceling headphones.', price: 30000, rating: 4.9, imageUrl: 'https://via.placeholder.com/150?text=Sony+WH-1000XM5', url: 'https://www.flipkart.com' },
     { id: 10, name: 'Samsung Smart TV', description: 'A 4K UHD Smart TV with crystal-clear visuals.', price: 50000, rating: 4.8, imageUrl: 'https://via.placeholder.com/150?text=Samsung+Smart+TV', url: 'https://www.flipkart.com' },
-    // Add remaining 20 products...
+    //  remaining products...
     ],
     jewelry: [
       { id: 1, name: 'Gold Necklace', description: 'Beautiful gold necklace with intricate designs.', price: 25000, rating: 4.6, imageUrl: 'https://via.placeholder.com/150?text=Gold+Necklace', url: 'https://www.flipkart.com' },
@@ -23,7 +23,7 @@ const flipkartData = {
       { id: 8, name: 'Ruby Ring', description: 'Elegant ring featuring a radiant ruby.', price: 22000, rating: 4.5, imageUrl: 'https://via.placeholder.com/150?text=Ruby+Ring', url: 'https://www.flipkart.com' },
       { id: 9, name: 'Silver Anklet', description: 'Delicate silver anklet with a modern touch.', price: 1200, rating: 4.3, imageUrl: 'https://via.placeholder.com/150?text=Silver+Anklet', url: 'https://www.flipkart.com' },
       { id: 10, name: 'Gold Chain', description: 'Simple and elegant gold chain for daily wear.', price: 15000, rating: 4.4, imageUrl: 'https://via.placeholder.com/150?text=Gold+Chain', url: 'https://www.flipkart.com' },
-      // Add remaining 20 products...
+      //  remaining products...
     ],
     men_clothing: [
       { id: 1, name: 'Cotton T-Shirt', description: 'Comfortable T-shirt made of high-quality cotton.', price: 500, rating: 4.3, imageUrl: 'https://via.placeholder.com/150?text=Cotton+T-Shirt', url: 'https://www.flipkart.com' },
@@ -36,7 +36,7 @@ const flipkartData = {
       { id: 8, name: 'Chinos', description: 'Stylish chinos with a tailored fit.', price: 1800, rating: 4.4, imageUrl: 'https://via.placeholder.com/150?text=Chinos', url: 'https://www.flipkart.com' },
       { id: 9, name: 'Polo T-Shirt', description: 'Classic polo T-shirt for casual outings.', price: 700, rating: 4.2, imageUrl: 'https://via.placeholder.com/150?text=Polo+T-Shirt', url: 'https://www.flipkart.com' },
       { id: 10, name: 'Leather Jacket', description: 'Premium leather jacket for a rugged look.', price: 8000, rating: 4.8, imageUrl: 'https://via.placeholder.com/150?text=Leather+Jacket', url: 'https://www.flipkart.com' },
-      // Add remaining 20 products...
+      //  remaining 20 products...
     ],
     women_clothing: [
       { id: 1, name: 'Evening Gown', description: 'An elegant evening gown suitable for special occasions.', price: 4000, rating: 4.7, imageUrl: 'https://via.placeholder.com/150?text=Evening+Gown', url: 'https://www.flipkart.com' },
@@ -49,7 +49,7 @@ const flipkartData = {
       { id: 8, name: 'Lehenga Choli', description: 'Traditional lehenga choli with vibrant colors.', price: 8000, rating: 4.7, imageUrl: 'https://via.placeholder.com/150?text=Lehenga+Choli', url: 'https://www.flipkart.com' },
       { id: 9, name: 'Formal Blouse', description: 'Chic blouse for office wear.', price: 1200, rating: 4.5, imageUrl: 'https://via.placeholder.com/150?text=Formal+Blouse', url: 'https://www.flipkart.com' },
       { id: 10, name: 'Woolen Sweater', description: 'Warm woolen sweater for winters.', price: 1500, rating: 4.3, imageUrl: 'https://via.placeholder.com/150?text=Woolen+Sweater', url: 'https://www.flipkart.com' },
-      // Add remaining 20 products...
+      // remaining 20 products...
     ],
   };
 

@@ -1,4 +1,4 @@
-/* Root Variables */
+
 :root {
   --primary-color: #9b00c6;
   --secondary-color: #7200b7;
@@ -10,7 +10,6 @@
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* General Styles */
 .register-page {
   display: flex;
   justify-content: center;
@@ -18,7 +17,7 @@
   min-height: 100vh;
   background: var(--background-gradient);
   color: var(--text-light);
-  padding: 20px; /* Added padding for small screens */
+  padding: 20px; 
 }
 
 .register-card {
@@ -115,7 +114,6 @@
   text-decoration: underline;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .register-card {
     width: 90%; /* Adjust width to fit smaller screens */
@@ -123,49 +121,49 @@
   }
 
   .register-card h2 {
-    font-size: 1.8rem; /* Slightly smaller font for heading */
+    font-size: 1.8rem; 
   }
 
   .register-card input {
-    font-size: 0.9rem; /* Reduce input text size */
-    padding: 10px; /* Adjust padding for inputs */
+    font-size: 0.9rem; 
+    padding: 10px; 
   }
 
   .register-card button {
-    font-size: 0.9rem; /* Reduce button text size */
-    padding: 10px; /* Adjust button padding */
+    font-size: 0.9rem; 
+    padding: 10px; 
   }
 }
 
 @media (max-width: 480px) {
   .register-card {
-    width: 100%; /* Full width for very small screens */
-    padding: 15px 20px; /* Further reduce padding */
+    width: 100%; 
+    padding: 15px 20px; 
   }
 
   .register-card h2 {
-    font-size: 1.5rem; /* Smaller font for very small devices */
+    font-size: 1.5rem; 
   }
 
   .register-card input {
-    font-size: 0.85rem; /* Reduce input text size more */
-    padding: 8px; /* Further reduce padding */
+    font-size: 0.85rem; 
+    padding: 8px; 
   }
 
   .register-card button {
-    font-size: 0.85rem; /* Reduce button text size */
-    padding: 8px; /* Adjust button padding */
+    font-size: 0.85rem; 
+    padding: 8px;
   }
 
   .register-card p {
-    font-size: 0.8rem; /* Smaller font for supporting text */
+    font-size: 0.8rem;
   }
 }
 
 /* Error Message */
 .error-message {
   color: var(--error-color);
-  font-size: 0.85rem; /* Smaller font for error message */
+  font-size: 0.85rem; 
   margin-top: -10px;
   text-align: center;
 }

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 const useScrollAnimation = () => {
   useEffect(() => {
     const elements = document.querySelectorAll(".animated");
