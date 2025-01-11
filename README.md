@@ -4,8 +4,19 @@
 
 This project is an **e-commerce product comparison website** built with **React** and **Node.js**. The website allows users to compare products across multiple online marketplaces such as **Flipkart**, **Amazon**, and **Myntra**. Due to API access restrictions from these platforms, mock data is currently used to simulate the product comparison. In the future, if API keys are obtained, the product data will be dynamically fetched, making the comparison even more accurate and up-to-date.
 
+## 🖼️ Screenshots
+
+### Home Page
+
+![Home Page](./Images/homess.png)
+
+### Product Comparison Page
+
+![Product Comparison](./Images/comparess.png)
+![Product Comparison](./Images/cardsss.png)
 
 ## Features
+![Features](./Images/featuresss.png)
 
 - **User Authentication**: Login and registration functionality.
 - **Responsive Design**: The website is designed to be fully responsive for optimal viewing on both mobile and desktop devices.
