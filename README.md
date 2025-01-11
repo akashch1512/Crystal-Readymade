@@ -80,7 +80,7 @@ give next content from here
    npm start
    //Start the backend (server side):
    cd backend
-   npm start
+   node server.js
 
 
 6. 🚀 Running the Project
