@@ -1,0 +1,197 @@
+/* General container styles */
+.contact-container {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  color: #f9f9f9;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading and description */
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #9b00c6;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.description:hover {
+  color: #9b00c6; /* Accent color on hover */
+  transform: scale(1.05);
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center; /* Center the form contents */
+}
+
+/* Neon snake border for input and textarea */
+.form-input,
+.form-textarea {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #161616;
+  border-radius: 8px;
+  color: #f9f9f9;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; 
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: neonRotate 3s linear infinite;
+  border-image: linear-gradient(90deg, #9b00c6, #0cff0c, #7200b7) 1;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #bdbdbd;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  /* background: #444; */
+  box-shadow: inset 0 2px 10px rgba(155, 0, 198, 0.5);
+}
+
+@keyframes neonRotate {
+  0% {
+    border-image-source: linear-gradient(90deg, #ff00ff, #7aa5a5, #a0e1a0, #ff00ff);
+  }
+  50% {
+    border-image-source: linear-gradient(90deg, #ff00ff, #7aa5a5, #a0e1a0, #ff00ff);
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, #ff00ff, #7aa5a5, #a0e1a0, #ff00ff);
+  }
+}
+
+/* Submit button */
+.submit-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  width: 100%; /* Auto width based on content */
+  font-weight: bold;
+  color: #020202;
+  background: linear-gradient(135deg, #d574d5, #abdbab);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin: 0 auto; /* Center button horizontally */
+}
+
+.submit-button:hover {
+  background: linear-gradient(90deg, #92b3aa, #d0a4dc);
+  transform: scale(1.05);
+}
+
+.submit-button:active {
+  transform: scale(0.95);
+}
+
+/* Media Queries for mobile devices */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 90%; /* Adjust width for smaller screens */
+  }
+  
+  .heading {
+    font-size: 2rem; /* Adjust heading font size */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Adjust description font size */
+    margin-bottom: 15px;
+  }
+
+  .contact-form {
+    gap: 12px; /* Adjust gap for mobile devices */
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  .submit-button {
+    font-size: 1rem; /* Adjust font size for button */
+    padding: 12px 20px; /* Adjust padding for mobile */
+  }
+}
+
+/* Media Query for very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem; /* Smaller heading size */
+  }
+
+  .description {
+    font-size: 0.8rem; /* Even smaller description font */
+  }
+
+  .contact-form {
+    gap: 10px; /* Reduced gap between form elements */
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.85rem; /* Slightly smaller input fields */
+  }
+
+  .submit-button {
+    font-size: 0.9rem; /* Smaller button text */
+    padding: 10px 15px; /* Adjust button padding */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+  .heading {
+    font-size: 1.4rem; /* Further reduced heading size for extremely small screens */
+  }
+
+  .description {
+    font-size: 0.75rem; /* Smaller description text */
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.8rem; /* Even smaller inputs */
+  }
+
+  .submit-button {
+    font-size: 0.8rem; /* Smaller button text */
+    padding: 8px 12px; /* Adjust button padding */
+  }
+}

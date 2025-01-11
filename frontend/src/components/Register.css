@@ -1,0 +1,171 @@
+/* Root Variables */
+:root {
+  --primary-color: #9b00c6;
+  --secondary-color: #7200b7;
+  --error-color: #ff4d4d;
+  --text-light: #f9f9f9;
+  --background-gradient: linear-gradient(145deg, rgba(42, 42, 42, 0.9), rgba(28, 28, 28, 0.9));
+  --input-background: rgba(255, 255, 255, 0.1);
+  --input-focus: rgba(155, 0, 198, 0.3);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* General Styles */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--background-gradient);
+  color: var(--text-light);
+  padding: 20px; /* Added padding for small screens */
+}
+
+.register-card {
+  background: rgba(51, 51, 51, 0.8);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  width: 400px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-card h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-card input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--input-background);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.register-card input:focus {
+  background: var(--input-focus);
+  outline: none;
+}
+
+.register-card button {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.register-card button:disabled {
+  background: rgba(155, 0, 198, 0.5);
+  cursor: not-allowed;
+}
+
+.register-card button:hover:enabled {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: -10px;
+  text-align: left;
+}
+
+.register-card p {
+  font-size: 0.9rem;
+  margin-top: 20px;
+  color: var(--text-light);
+}
+
+.register-card p a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .register-card {
+    width: 90%; /* Adjust width to fit smaller screens */
+    padding: 20px 30px; /* Reduce padding */
+  }
+
+  .register-card h2 {
+    font-size: 1.8rem; /* Slightly smaller font for heading */
+  }
+
+  .register-card input {
+    font-size: 0.9rem; /* Reduce input text size */
+    padding: 10px; /* Adjust padding for inputs */
+  }
+
+  .register-card button {
+    font-size: 0.9rem; /* Reduce button text size */
+    padding: 10px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    width: 100%; /* Full width for very small screens */
+    padding: 15px 20px; /* Further reduce padding */
+  }
+
+  .register-card h2 {
+    font-size: 1.5rem; /* Smaller font for very small devices */
+  }
+
+  .register-card input {
+    font-size: 0.85rem; /* Reduce input text size more */
+    padding: 8px; /* Further reduce padding */
+  }
+
+  .register-card button {
+    font-size: 0.85rem; /* Reduce button text size */
+    padding: 8px; /* Adjust button padding */
+  }
+
+  .register-card p {
+    font-size: 0.8rem; /* Smaller font for supporting text */
+  }
+}
+
+/* Error Message */
+.error-message {
+  color: var(--error-color);
+  font-size: 0.85rem; /* Smaller font for error message */
+  margin-top: -10px;
+  text-align: center;
+}

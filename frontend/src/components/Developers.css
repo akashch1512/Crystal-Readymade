@@ -1,0 +1,169 @@
+/* Define CSS variables for theming */
+:root {
+  --primary-color: #9b00c6;
+  --secondary-color: #7200b7;
+  --glass-blur: 10px;
+  --text-light: #f9f9f9;
+  --text-muted: #bdbdbd;
+  --accent-gradient: linear-gradient(90deg, #ff00ff, #7aa5a5, #a0e1a0, #ff00ff); /* Accent gradient */
+}
+
+/* Main container for developers */
+.developers-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  background-color: #161616;
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 15px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Styling for the h1 element */
+.developers-container h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; /* Make gradient apply only to the text */
+  color: transparent; /* Make text color transparent to show gradient */
+}
+
+/* Hover effects for heading */
+.developers-container h1:hover {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; 
+  color: transparent; /* Ensure gradient stays */
+  transform: scale(1.1); 
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .developers-container h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .developers-container {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .developers-container h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Fade-in animation for developers container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Neon border animation */
+@keyframes neon-border {
+  0% { border-color: #ff0054; }
+  16% { border-color: #ff8c00; }
+  32% { border-color: #ffdc00; }
+  48% { border-color: #00ff00; }
+  64% { border-color: #00e1ff; }
+  80% { border-color: #7a00ff; }
+  100% { border-color: #ff0054; }
+}
+
+/* Developer card styles */
+.developer-card {
+  background: #333, #020304;
+  backdrop-filter: blur(5px);
+  color: var(--text-light);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 280px;
+  height: 350px;
+  display: flex;
+  border: 4px solid var(--accent-gradient); /* Use gradient for border */
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: neon-border 5s infinite linear;
+  border: 1px solid transparent;  
+}
+
+/* Hover effects for developer card */
+.developer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(155, 0, 198, 0.5);
+}
+
+/* Developer card image */
+.developer-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for image */
+.developer-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Developer card heading */
+.developer-card h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: var(--primary-color);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  color: transparent; /* Apply gradient to text */
+}
+
+/* Developer card paragraph */
+.developer-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .developers-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .developer-card {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .developer-card h2 {
+    font-size: 1.3rem;
+  }
+  .developer-card p {
+    font-size: 0.9rem;
+  }
+}
