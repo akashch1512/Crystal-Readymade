@@ -73,14 +73,19 @@ give next content from here
    DB_URI=your-mongodb-uri
    JWT_SECRET=your-jwt-secret
 5. Run both the frontend and backend:
-   -Start the frontend (client side):
-      
+   
    ```bash
+   //Start the frontend (client side):
    cd frontend
    npm start
-  -Start the backend (server side):
-      
-   ```bash
+   //Start the backend (server side):
    cd backend
    npm start
+
+
+6. 🚀 Running the Project
+Once both the frontend and backend are running, open your browser and go to:
+
+   ```bash
+   http://localhost:3000 🚀
 
