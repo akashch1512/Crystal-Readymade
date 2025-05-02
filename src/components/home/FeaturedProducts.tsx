@@ -1,0 +1,40 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronRight } from 'lucide-react';
+import ProductCard from '../products/ProductCard';
+import { products } from '../../data/mockData';
+
+const FeaturedProducts: React.FC = () => {
+  // Get products with the highest ratings
+  const featuredProducts = [...products]
+    .sort((a, b) => b.ratings - a.ratings)
+    .slice(0, 4);
+
+  return (
+    <section className="py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-between mb-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Featured Products</h2>
+            <p className="text-gray-600">Our most popular products based on sales</p>
+          </div>
+          <Link
+            to="/products"
+            className="flex items-center text-blue-600 hover:text-blue-800 transition-colors mt-4 md:mt-0"
+          >
+            View All Products
+            <ChevronRight size={16} className="ml-1" />
+          </Link>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeaturedProducts;
