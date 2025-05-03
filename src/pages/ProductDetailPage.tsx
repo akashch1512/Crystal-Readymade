@@ -112,11 +112,11 @@ const ProductDetailPage: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Breadcrumbs */}
       <div className="flex text-sm text-gray-500 mb-6">
-        <a href="/" className="hover:text-blue-600">Home</a>
+        <a href="/" className="hover:text-pink-600">Home</a>
         <span className="mx-2">/</span>
-        <a href="/products" className="hover:text-blue-600">Products</a>
+        <a href="/products" className="hover:text-pink-600">Products</a>
         <span className="mx-2">/</span>
-        <a href={`/products?category=${encodeURIComponent(product.category)}`} className="hover:text-blue-600">
+        <a href={`/products?category=${encodeURIComponent(product.category)}`} className="hover:text-pink-600">
           {product.category}
         </a>
         <span className="mx-2">/</span>
@@ -165,7 +165,7 @@ const ProductDetailPage: React.FC = () => {
                   onClick={() => setActiveImage(index)}
                   className={`w-20 h-20 rounded-md overflow-hidden flex-shrink-0 ${
                     activeImage === index
-                      ? 'ring-2 ring-blue-500'
+                      ? 'ring-2 ring-pink-500'
                       : 'ring-1 ring-gray-200'
                   }`}
                   aria-label={`View image ${index + 1}`}
@@ -207,7 +207,7 @@ const ProductDetailPage: React.FC = () => {
               <div className="flex items-baseline">
                 <span className="text-2xl font-bold text-gray-900">${product.salePrice.toFixed(2)}</span>
                 <span className="ml-2 text-lg text-gray-500 line-through">${product.price.toFixed(2)}</span>
-                <span className="ml-2 text-sm bg-red-100 text-red-700 px-2 py-0.5 rounded">
+                <span className="ml-2 text-sm bg-pink-100 text-red-700 px-2 py-0.5 rounded">
                   {Math.round(((product.price - product.salePrice) / product.price) * 100)}% OFF
                 </span>
               </div>
@@ -226,7 +226,7 @@ const ProductDetailPage: React.FC = () => {
               <span className="text-gray-500 w-24">Category:</span>
               <a 
                 href={`/products?category=${encodeURIComponent(product.category)}`}
-                className="text-blue-600 hover:underline"
+                className="text-pink-600 hover:underline"
               >
                 {product.category}
               </a>
@@ -235,7 +235,7 @@ const ProductDetailPage: React.FC = () => {
               <span className="text-gray-500 w-24">Brand:</span>
               <a 
                 href={`/products?brand=${encodeURIComponent(product.brand)}`}
-                className="text-blue-600 hover:underline"
+                className="text-pink-600 hover:underline"
               >
                 {product.brand}
               </a>
@@ -247,7 +247,7 @@ const ProductDetailPage: React.FC = () => {
                   <a 
                     key={tag}
                     href={`/products?tags=${encodeURIComponent(tag)}`}
-                    className="text-blue-600 hover:underline mr-2"
+                    className="text-pink-600 hover:underline mr-2"
                   >
                     {tag}
                   </a>
@@ -303,7 +303,7 @@ const ProductDetailPage: React.FC = () => {
             {product.inStock ? (
               <button
                 onClick={handleAddToCart}
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center"
+                className="w-full bg-pink-600 text-white py-3 px-4 rounded-md hover:bg-pink-700 transition-colors flex items-center justify-center"
               >
                 <ShoppingBag size={18} className="mr-2" />
                 Add to Cart
@@ -322,7 +322,7 @@ const ProductDetailPage: React.FC = () => {
                 onClick={handleWishlistToggle}
                 className={`flex-1 py-3 px-4 rounded-md border ${
                   isWishlisted
-                    ? 'border-red-500 text-red-500 bg-red-50 hover:bg-red-100'
+                    ? 'border-red-500 text-red-500 bg-pink-50 hover:bg-pink-100'
                     : 'border-gray-300 text-gray-700 hover:bg-gray-50'
                 } transition-colors flex items-center justify-center`}
               >

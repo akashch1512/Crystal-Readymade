@@ -41,7 +41,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
         <div className="ml-4 flex flex-1 flex-col">
           <div>
             <div className="flex justify-between">
-              <Link to={`/product/${productSlug}`} className="text-lg font-medium text-gray-900 hover:text-blue-600">
+              <Link to={`/product/${productSlug}`} className="text-lg font-medium text-gray-900 hover:text-pink-600">
                 {item.name}
               </Link>
               <button

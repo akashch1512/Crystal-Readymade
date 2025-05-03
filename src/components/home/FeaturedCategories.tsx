@@ -25,7 +25,7 @@ const FeaturedCategories: React.FC = () => {
               <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
                 <h3 className="text-white text-xl font-semibold mb-2">{category.name}</h3>
                 <p className="text-white/80 text-sm mb-3 line-clamp-2">{category.description}</p>
-                <span className="inline-block text-sm text-white bg-blue-600/80 py-1 px-3 rounded transition-colors group-hover:bg-blue-600">
+                <span className="inline-block text-sm text-white bg-pink-600/80 py-1 px-3 rounded transition-colors group-hover:bg-pink-600">
                   Shop Now
                 </span>
               </div>

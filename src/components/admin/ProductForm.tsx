@@ -300,7 +300,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit }) => {
             name="inStock"
             checked={formData.inStock}
             onChange={handleChange}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
           />
           <label htmlFor="inStock" className="ml-2 block text-sm text-gray-700">
             In Stock
@@ -335,7 +335,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit }) => {
         <button
           type="button"
           onClick={addImageField}
-          className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+          className="text-pink-600 hover:text-pink-800 text-sm font-medium"
         >
           + Add Another Image
         </button>
@@ -352,7 +352,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit }) => {
         <button
           type="submit"
           disabled={loading}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-300"
+          className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors disabled:bg-pink-300"
         >
           {loading ? 'Saving...' : product ? 'Update Product' : 'Add Product'}
         </button>

@@ -39,7 +39,7 @@ const DashboardOverview: React.FC = () => {
           {/* Activity log would go here */}
           <ul className="space-y-3">
             <li className="flex">
-              <span className="text-blue-600 mr-2">•</span>
+              <span className="text-pink-600 mr-2">•</span>
               <div>
                 <p className="text-gray-700">New order #1003 received</p>
                 <p className="text-xs text-gray-500">5 minutes ago</p>
@@ -86,7 +86,7 @@ const ProductsManagement: React.FC = () => {
         <h1 className="text-2xl font-bold text-gray-900">Products</h1>
         <a
           href="/admin/products/new"
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+          className="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition-colors"
         >
           Add New Product
         </a>
@@ -155,7 +155,7 @@ const ProductsManagement: React.FC = () => {
                               In Stock ({product.quantity})
                             </span>
                           ) : (
-                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-pink-100 text-red-800">
                               Out of Stock
                             </span>
                           )}
@@ -163,7 +163,7 @@ const ProductsManagement: React.FC = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm">
                           <a
                             href={`/admin/products/edit/${product.id}`}
-                            className="text-blue-600 hover:text-blue-900 mr-3"
+                            className="text-pink-600 hover:text-pink-900 mr-3"
                           >
                             Edit
                           </a>
@@ -265,10 +265,10 @@ const OrdersManagement: React.FC = () => {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                             order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                            order.status === 'processing' ? 'bg-blue-100 text-blue-800' :
+                            order.status === 'processing' ? 'bg-pink-100 text-pink-800' :
                             order.status === 'shipped' ? 'bg-purple-100 text-purple-800' :
                             order.status === 'delivered' ? 'bg-green-100 text-green-800' :
-                            order.status === 'cancelled' ? 'bg-red-100 text-red-800' :
+                            order.status === 'cancelled' ? 'bg-pink-100 text-red-800' :
                             'bg-gray-100 text-gray-800'
                           }`}>
                             {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
@@ -280,7 +280,7 @@ const OrdersManagement: React.FC = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm">
                           <a
                             href={`/admin/orders/${order.id}`}
-                            className="text-blue-600 hover:text-blue-900"
+                            className="text-pink-600 hover:text-pink-900"
                           >
                             View
                           </a>

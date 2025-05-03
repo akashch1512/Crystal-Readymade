@@ -37,7 +37,7 @@ const CartPage: React.FC = () => {
             <div className="mt-6 flex justify-between">
               <Link
                 to="/products"
-                className="flex items-center text-blue-600 hover:text-blue-800"
+                className="flex items-center text-pink-600 hover:text-pink-800"
               >
                 <ArrowLeft size={16} className="mr-1" />
                 Continue Shopping
@@ -66,7 +66,7 @@ const CartPage: React.FC = () => {
           <p className="text-gray-500 mb-6">Looks like you haven't added any products to your cart yet.</p>
           <Link
             to="/products"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+            className="inline-block bg-pink-600 text-white px-6 py-3 rounded-md hover:bg-pink-700 transition-colors"
           >
             Start Shopping
           </Link>

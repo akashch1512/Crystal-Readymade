@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
           <div className="absolute inset-0 z-20 flex items-center">
             <div className="container mx-auto px-4 md:px-10">
               <div className="max-w-lg">
-                <p className="text-blue-400 text-sm md:text-base uppercase tracking-wider mb-2 transform translate-y-4 opacity-0 animate-fade-in"
+                <p className="text-pink-400 text-sm md:text-base uppercase tracking-wider mb-2 transform translate-y-4 opacity-0 animate-fade-in"
                    style={{ animationDelay: '0.2s' }}>
                   {slide.subtitle}
                 </p>
@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
                 </p>
                 <Link
                   to={slide.buttonLink}
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors transform translate-y-4 opacity-0 animate-fade-in"
+                  className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-md transition-colors transform translate-y-4 opacity-0 animate-fade-in"
                   style={{ animationDelay: '0.8s' }}
                 >
                   {slide.buttonText}

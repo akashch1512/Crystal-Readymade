@@ -25,13 +25,13 @@ const OrdersPage: React.FC = () => {
       case 'pending':
         return 'bg-yellow-100 text-yellow-800';
       case 'processing':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-pink-100 text-pink-800';
       case 'shipped':
         return 'bg-purple-100 text-purple-800';
       case 'delivered':
         return 'bg-green-100 text-green-800';
       case 'cancelled':
-        return 'bg-red-100 text-red-800';
+        return 'bg-pink-100 text-red-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -131,7 +131,7 @@ const OrdersPage: React.FC = () => {
                   <div>
                     <Link
                       to={`/orders/${order.id}`}
-                      className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                      className="text-pink-600 hover:text-pink-800 text-sm font-medium"
                     >
                       View Order Details
                     </Link>
@@ -152,7 +152,7 @@ const OrdersPage: React.FC = () => {
           </p>
           <Link
             to="/products"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+            className="inline-block bg-pink-600 text-white px-6 py-3 rounded-md hover:bg-pink-700 transition-colors"
           >
             Start Shopping
           </Link>

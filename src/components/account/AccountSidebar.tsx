@@ -17,9 +17,9 @@ const AccountSidebar: React.FC = () => {
   return (
     <div className="w-full md:w-64 bg-white rounded-lg shadow-md overflow-hidden">
       {/* User Info */}
-      <div className="p-6 bg-blue-600 text-white">
+      <div className="p-6 bg-pink-600 text-white">
         <h2 className="text-xl font-semibold">{user.name}</h2>
-        <p className="text-blue-100 mt-1">{user.email}</p>
+        <p className="text-pink-100 mt-1">{user.email}</p>
       </div>
       
       {/* Navigation Links */}
@@ -32,7 +32,7 @@ const AccountSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-pink-50 text-pink-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`
               }
@@ -47,7 +47,7 @@ const AccountSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-pink-50 text-pink-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`
               }
@@ -62,7 +62,7 @@ const AccountSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-pink-50 text-pink-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`
               }
@@ -77,7 +77,7 @@ const AccountSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-pink-50 text-pink-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`
               }
@@ -92,7 +92,7 @@ const AccountSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-pink-50 text-pink-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`
               }
@@ -107,7 +107,7 @@ const AccountSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-pink-50 text-pink-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`
               }
@@ -125,7 +125,7 @@ const AccountSidebar: React.FC = () => {
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 rounded-md ${
                     isActive
-                      ? 'bg-blue-50 text-blue-600 font-medium'
+                      ? 'bg-pink-50 text-pink-600 font-medium'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`
                 }

@@ -51,7 +51,7 @@ const ProfileForm: React.FC = () => {
         {!isEditing && (
           <button
             onClick={() => setIsEditing(true)}
-            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+            className="text-pink-600 hover:text-pink-800 text-sm font-medium"
           >
             Edit
           </button>
@@ -61,7 +61,7 @@ const ProfileForm: React.FC = () => {
       {message.text && (
         <div
           className={`mb-4 p-3 rounded ${
-            message.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+            message.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-pink-50 text-red-700'
           }`}
         >
           {message.text}
@@ -128,7 +128,7 @@ const ProfileForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSaving}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-300"
+              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors disabled:bg-pink-300"
             >
               {isSaving ? 'Saving...' : 'Save Changes'}
             </button>

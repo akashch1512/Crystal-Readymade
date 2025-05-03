@@ -79,7 +79,7 @@ const CartSummary: React.FC = () => {
             type="text"
             id="discount-code"
             name="discount-code"
-            className="flex-grow px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="flex-grow px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500"
             placeholder="Enter code"
             value={discountCode}
             onChange={(e) => setDiscountCode(e.target.value)}
@@ -101,7 +101,7 @@ const CartSummary: React.FC = () => {
       
       <button
         onClick={handleCheckout}
-        className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
+        className="w-full bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700 transition-colors font-medium"
       >
         Proceed to Checkout
       </button>
