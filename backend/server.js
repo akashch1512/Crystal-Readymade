@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
-const orderRoutes = require('./routes/orderRoutes');
+// const orderRoutes = require('./routes/orderRoutes');
 const cors = require('cors');
 
 dotenv.config();
@@ -17,7 +17,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
-app.use('/api/orders', orderRoutes);
+// app.use('/api/orders', orderRoutes);
 
 // DB connection
 mongoose.connect(process.env.MONGO_URI, {
