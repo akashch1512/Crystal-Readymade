@@ -81,7 +81,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
             shipping_method: 'standard',
           },
           theme: {
-            color: '#3B82F6', // Blue color
+            color: '#3B82F6', // pink color
           },
         };
         
@@ -112,7 +112,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+        <div className="bg-pink-50 border border-red-200 text-red-700 px-4 py-3 rounded">
           {error}
         </div>
       )}
@@ -128,7 +128,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               name="address"
               value={selectedAddress}
               onChange={handleAddressChange}
-              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-pink-500 focus:border-pink-500"
             >
               <option value="">Select an address</option>
               {user.addresses.map(address => (
@@ -142,7 +142,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               <button
                 type="button"
                 onClick={() => navigate('/account/addresses/new?redirect=checkout')}
-                className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                className="text-pink-600 hover:text-pink-800 text-sm font-medium"
               >
                 + Add a new address
               </button>
@@ -154,7 +154,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
             <button
               type="button"
               onClick={() => navigate('/account/addresses/new?redirect=checkout')}
-              className="mt-2 text-blue-600 hover:text-blue-800 font-medium"
+              className="mt-2 text-pink-600 hover:text-pink-800 font-medium"
             >
               + Add a new address
             </button>
@@ -174,7 +174,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               value="card"
               checked={paymentMethod === 'card'}
               onChange={handlePaymentMethodChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500"
             />
             <div className="ml-3">
               <span className="block text-sm font-medium text-gray-900">Credit/Debit Card</span>
@@ -189,7 +189,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               value="upi"
               checked={paymentMethod === 'upi'}
               onChange={handlePaymentMethodChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500"
             />
             <div className="ml-3">
               <span className="block text-sm font-medium text-gray-900">UPI</span>
@@ -204,7 +204,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               value="wallet"
               checked={paymentMethod === 'wallet'}
               onChange={handlePaymentMethodChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500"
             />
             <div className="ml-3">
               <span className="block text-sm font-medium text-gray-900">Mobile Wallet</span>
@@ -219,7 +219,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               value="netbanking"
               checked={paymentMethod === 'netbanking'}
               onChange={handlePaymentMethodChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500"
             />
             <div className="ml-3">
               <span className="block text-sm font-medium text-gray-900">Net Banking</span>
@@ -234,7 +234,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
               value="cod"
               checked={paymentMethod === 'cod'}
               onChange={handlePaymentMethodChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500"
             />
             <div className="ml-3">
               <span className="block text-sm font-medium text-gray-900">Cash on Delivery</span>
@@ -281,7 +281,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
         <button
           type="submit"
           disabled={loading || !selectedAddress || items.length === 0}
-          className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-medium disabled:bg-blue-300 disabled:cursor-not-allowed"
+          className="w-full bg-pink-600 text-white py-3 px-4 rounded-md hover:bg-pink-700 transition-colors font-medium disabled:bg-pink-300 disabled:cursor-not-allowed"
         >
           {loading ? 'Processing...' : `Pay $${total.toFixed(2)}`}
         </button>

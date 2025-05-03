@@ -52,7 +52,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         
         {/* Discount Badge */}
         {discountPercentage > 0 && (
-          <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+          <span className="absolute top-2 left-2 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded">
             {discountPercentage}% OFF
           </span>
         )}
@@ -62,7 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <div className="flex gap-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
             <button
               onClick={handleAddToCart}
-              className="bg-white text-gray-800 p-2 rounded-full shadow-md hover:bg-blue-500 hover:text-white transition-colors"
+              className="bg-white text-gray-800 p-2 rounded-full shadow-md hover:bg-pink-500 hover:text-white transition-colors"
               aria-label="Add to cart"
             >
               <ShoppingBag size={20} />
@@ -71,8 +71,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               onClick={handleWishlistToggle}
               className={`p-2 rounded-full shadow-md transition-colors ${
                 isWishlisted
-                  ? 'bg-red-500 text-white hover:bg-red-600'
-                  : 'bg-white text-gray-800 hover:bg-red-500 hover:text-white'
+                  ? 'bg-pink-500 text-white hover:bg-pink-600'
+                  : 'bg-white text-gray-800 hover:bg-pink-500 hover:text-white'
               }`}
               aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
             >

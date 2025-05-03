@@ -81,7 +81,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
           {activeFilterCount > 0 && (
             <button
               onClick={clearFilters}
-              className="text-sm text-blue-600 hover:text-blue-800"
+              className="text-sm text-pink-600 hover:text-pink-800"
             >
               Clear all filters
             </button>
@@ -109,7 +109,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                       type="radio"
                       checked={filterOptions.category === category}
                       onChange={() => handleCategoryChange(category)}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                     />
                     <label
                       htmlFor={`category-${category}`}
@@ -143,7 +143,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                       type="radio"
                       checked={filterOptions.brand === brand}
                       onChange={() => handleBrandChange(brand)}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                     />
                     <label
                       htmlFor={`brand-${brand}`}
@@ -176,7 +176,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                     type="radio"
                     checked={!filterOptions.minPrice && !filterOptions.maxPrice}
                     onChange={() => handlePriceChange(undefined, undefined)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                   />
                   <label
                     htmlFor="price-any"
@@ -192,7 +192,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                     type="radio"
                     checked={filterOptions.maxPrice === 50}
                     onChange={() => handlePriceChange(0, 50)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                   />
                   <label
                     htmlFor="price-under-50"
@@ -208,7 +208,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                     type="radio"
                     checked={filterOptions.minPrice === 50 && filterOptions.maxPrice === 100}
                     onChange={() => handlePriceChange(50, 100)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                   />
                   <label
                     htmlFor="price-50-100"
@@ -224,7 +224,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                     type="radio"
                     checked={filterOptions.minPrice === 100 && filterOptions.maxPrice === 200}
                     onChange={() => handlePriceChange(100, 200)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                   />
                   <label
                     htmlFor="price-100-200"
@@ -240,7 +240,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                     type="radio"
                     checked={filterOptions.minPrice === 200}
                     onChange={() => handlePriceChange(200, undefined)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                   />
                   <label
                     htmlFor="price-over-200"
@@ -273,7 +273,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                       type="radio"
                       checked={filterOptions.rating === rating}
                       onChange={() => handleRatingChange(rating)}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                     />
                     <label
                       htmlFor={`rating-${rating}`}
@@ -362,7 +362,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                           type="radio"
                           checked={filterOptions.category === category}
                           onChange={() => handleCategoryChange(category)}
-                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                         />
                         <label
                           htmlFor={`mobile-category-${category}`}
@@ -387,7 +387,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                           type="radio"
                           checked={filterOptions.brand === brand}
                           onChange={() => handleBrandChange(brand)}
-                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                         />
                         <label
                           htmlFor={`mobile-brand-${brand}`}
@@ -411,7 +411,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                         type="radio"
                         checked={!filterOptions.minPrice && !filterOptions.maxPrice}
                         onChange={() => handlePriceChange(undefined, undefined)}
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                       />
                       <label
                         htmlFor="mobile-price-any"
@@ -427,7 +427,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                         type="radio"
                         checked={filterOptions.maxPrice === 50}
                         onChange={() => handlePriceChange(0, 50)}
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                       />
                       <label
                         htmlFor="mobile-price-under-50"
@@ -443,7 +443,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                         type="radio"
                         checked={filterOptions.minPrice === 50 && filterOptions.maxPrice === 100}
                         onChange={() => handlePriceChange(50, 100)}
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                       />
                       <label
                         htmlFor="mobile-price-50-100"
@@ -459,7 +459,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                         type="radio"
                         checked={filterOptions.minPrice === 100 && filterOptions.maxPrice === 200}
                         onChange={() => handlePriceChange(100, 200)}
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                       />
                       <label
                         htmlFor="mobile-price-100-200"
@@ -475,7 +475,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                         type="radio"
                         checked={filterOptions.minPrice === 200}
                         onChange={() => handlePriceChange(200, undefined)}
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                       />
                       <label
                         htmlFor="mobile-price-over-200"
@@ -499,7 +499,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
                           type="radio"
                           checked={filterOptions.rating === rating}
                           onChange={() => handleRatingChange(rating)}
-                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                         />
                         <label
                           htmlFor={`mobile-rating-${rating}`}
@@ -525,7 +525,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
               )}
               <button
                 onClick={() => setShowMobileFilters(false)}
-                className="flex-1 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
+                className="flex-1 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-600 hover:bg-pink-700"
               >
                 Apply Filters
               </button>

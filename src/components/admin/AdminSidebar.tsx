@@ -27,7 +27,7 @@ const AdminSidebar: React.FC = () => {
       {/* Admin Header */}
       <div className="p-6 bg-gray-900">
         <h2 className="text-xl font-bold tracking-wide">Admin Panel</h2>
-        <p className="text-gray-400 text-sm mt-1">CrystalReadymade</p>
+        <p className="text-gray-400 text-sm mt-1">Crystaleadymade</p>
       </div>
       
       {/* Navigation Links */}
@@ -43,7 +43,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -58,7 +58,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -79,7 +79,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -94,7 +94,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -109,7 +109,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -130,7 +130,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -145,7 +145,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }
@@ -166,7 +166,7 @@ const AdminSidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 rounded-md ${
                   isActive
-                    ? 'bg-blue-600 text-white font-medium'
+                    ? 'bg-pink-600 text-white font-medium'
                     : 'text-gray-300 hover:bg-gray-700'
                 }`
               }

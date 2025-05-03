@@ -41,7 +41,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-blue-50">
+    <section className="py-16 bg-pink-50">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">What Our Customers Say</h2>
         <p className="text-gray-600 text-center mb-12">Hear from our satisfied customers</p>
@@ -56,7 +56,7 @@ const Testimonials: React.FC = () => {
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
                   <div className="bg-white rounded-lg shadow-md p-8 flex flex-col md:flex-row items-center">
                     <div className="md:w-1/3 mb-6 md:mb-0 md:mr-8">
-                      <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-100">
+                      <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-4 border-pink-100">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
                       </div>
                     </div>
                     <div className="md:w-2/3 text-center md:text-left">
-                      <div className="text-blue-600 text-4xl font-serif leading-tight mb-4">"</div>
+                      <div className="text-pink-600 text-4xl font-serif leading-tight mb-4">"</div>
                       <p className="text-gray-700 mb-6">{testimonial.content}</p>
                       <div>
                         <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
@@ -102,7 +102,7 @@ const Testimonials: React.FC = () => {
                 onClick={() => goToTestimonial(index)}
                 className={`w-3 h-3 mx-1 rounded-full transition-all ${
                   index === activeIndex 
-                    ? 'bg-blue-600 scale-110' 
+                    ? 'bg-pink-600 scale-110' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}

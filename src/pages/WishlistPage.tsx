@@ -72,7 +72,7 @@ const WishlistPage: React.FC = () => {
                 <div className="p-4">
                   <Link
                     to={`/product/${product.slug}`}
-                    className="text-lg font-medium text-gray-900 hover:text-blue-600 mb-2 block"
+                    className="text-lg font-medium text-gray-900 hover:text-pink-600 mb-2 block"
                   >
                     {product.name}
                   </Link>
@@ -107,7 +107,7 @@ const WishlistPage: React.FC = () => {
                       disabled={!product.inStock}
                       className={`flex-1 flex items-center justify-center px-4 py-2 rounded-md ${
                         product.inStock
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
+                          ? 'bg-pink-600 text-white hover:bg-pink-700'
                           : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                       } transition-colors`}
                     >
@@ -117,7 +117,7 @@ const WishlistPage: React.FC = () => {
                     
                     <button
                       onClick={() => handleRemoveFromWishlist(product.id)}
-                      className="p-2 rounded-md border border-red-500 text-red-500 hover:bg-red-50"
+                      className="p-2 rounded-md border border-red-500 text-red-500 hover:bg-pink-50"
                       aria-label="Remove from wishlist"
                     >
                       <Heart size={16} className="fill-current" />
@@ -139,7 +139,7 @@ const WishlistPage: React.FC = () => {
           </p>
           <Link
             to="/products"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+            className="inline-block bg-pink-600 text-white px-6 py-3 rounded-md hover:bg-pink-700 transition-colors"
           >
             Start Shopping
           </Link>

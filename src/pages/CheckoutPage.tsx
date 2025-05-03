@@ -53,7 +53,7 @@ const CheckoutPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               to={`/orders/${orderId}`}
-              className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+              className="bg-pink-600 text-white px-6 py-3 rounded-md hover:bg-pink-700 transition-colors"
             >
               View Order Details
             </Link>
@@ -73,7 +73,7 @@ const CheckoutPage: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl md:text-3xl font-bold mb-2">Checkout</h1>
       <div className="mb-8">
-        <Link to="/cart" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+        <Link to="/cart" className="inline-flex items-center text-pink-600 hover:text-pink-800">
           <ArrowLeft size={16} className="mr-1" />
           Back to Cart
         </Link>

@@ -82,7 +82,7 @@ const NotificationsPage: React.FC = () => {
         {unreadCount > 0 && (
           <button
             onClick={handleMarkAllAsRead}
-            className="flex items-center text-blue-600 hover:text-blue-800"
+            className="flex items-center text-pink-600 hover:text-pink-800"
           >
             <Check size={16} className="mr-1" />
             Mark all as read
@@ -99,7 +99,7 @@ const NotificationsPage: React.FC = () => {
                 notification.read
                   ? 'border-gray-200'
                   : notification.type === 'order'
-                  ? 'border-blue-500'
+                  ? 'border-pink-500'
                   : notification.type === 'promotion'
                   ? 'border-purple-500'
                   : 'border-gray-500'
@@ -109,7 +109,7 @@ const NotificationsPage: React.FC = () => {
                 <div 
                   className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 ${
                     notification.type === 'order'
-                      ? 'bg-blue-100 text-blue-600'
+                      ? 'bg-pink-100 text-pink-600'
                       : notification.type === 'promotion'
                       ? 'bg-purple-100 text-purple-600'
                       : 'bg-gray-100 text-gray-600'
@@ -132,7 +132,7 @@ const NotificationsPage: React.FC = () => {
                   {!notification.read && (
                     <button
                       onClick={() => handleMarkAsRead(notification.id)}
-                      className="mt-2 text-sm text-blue-600 hover:text-blue-800"
+                      className="mt-2 text-sm text-pink-600 hover:text-pink-800"
                     >
                       Mark as read
                     </button>

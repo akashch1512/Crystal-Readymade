@@ -27,9 +27,9 @@ const DashboardStats: React.FC = () => {
       value: '142',
       change: 8.2,
       increased: true,
-      icon: <ShoppingBag size={24} className="text-blue-500" />,
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200'
+      icon: <ShoppingBag size={24} className="text-pink-500" />,
+      bgColor: 'bg-pink-50',
+      borderColor: 'border-pink-200'
     },
     {
       id: 3,

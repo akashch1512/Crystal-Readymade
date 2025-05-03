@@ -55,8 +55,8 @@ const OrderStatusUpdateForm: React.FC<OrderStatusUpdateFormProps> = ({
             message.type === 'success'
               ? 'bg-green-50 text-green-700'
               : message.type === 'error'
-              ? 'bg-red-50 text-red-700'
-              : 'bg-blue-50 text-blue-700'
+              ? 'bg-pink-50 text-red-700'
+              : 'bg-pink-50 text-pink-700'
           }`}
         >
           {message.text}
@@ -72,7 +72,7 @@ const OrderStatusUpdateForm: React.FC<OrderStatusUpdateFormProps> = ({
           name="status"
           value={status}
           onChange={handleStatusChange}
-          className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-pink-500 focus:border-pink-500"
         >
           <option value="pending">Pending</option>
           <option value="processing">Processing</option>
@@ -85,7 +85,7 @@ const OrderStatusUpdateForm: React.FC<OrderStatusUpdateFormProps> = ({
       <button
         type="submit"
         disabled={updating || status === currentStatus}
-        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
+        className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors disabled:bg-pink-300 disabled:cursor-not-allowed"
       >
         {updating ? 'Updating...' : 'Update Status'}
       </button>

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+node_modules
+=======
 # Node modules
 node_modules/
 
@@ -26,3 +29,4 @@ coverage
 
 # macOS system files
 .DS_Store
+>>>>>>> 7aa2a9976d7fcae398ce053a860226d6c5e731af

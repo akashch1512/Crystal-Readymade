@@ -27,7 +27,7 @@ const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="py-12 bg-purple-700 text-white">
+    <section className="py-12 bg-pink-700 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">Subscribe to Our Newsletter</h2>

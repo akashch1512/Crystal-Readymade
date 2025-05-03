@@ -28,7 +28,7 @@ const AddressList: React.FC = () => {
         <h2 className="text-xl font-bold text-gray-900">My Addresses</h2>
         <a
           href="/account/addresses/new"
-          className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+          className="text-pink-600 hover:text-pink-800 text-sm font-medium"
         >
           + Add New Address
         </a>
@@ -40,11 +40,11 @@ const AddressList: React.FC = () => {
             <div
               key={address.id}
               className={`border rounded-lg p-4 ${
-                address.isDefault ? 'border-blue-400 bg-blue-50' : 'border-gray-200'
+                address.isDefault ? 'border-pink-400 bg-pink-50' : 'border-gray-200'
               }`}
             >
               {address.isDefault && (
-                <div className="mb-2 inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">
+                <div className="mb-2 inline-block px-2 py-1 bg-pink-100 text-pink-800 text-xs font-medium rounded-md">
                   Default Address
                 </div>
               )}
@@ -62,14 +62,14 @@ const AddressList: React.FC = () => {
               <div className="flex mt-4 space-x-4">
                 <a
                   href={`/account/addresses/edit/${address.id}`}
-                  className="text-blue-600 hover:text-blue-800 text-sm"
+                  className="text-pink-600 hover:text-pink-800 text-sm"
                 >
                   Edit
                 </a>
                 {!address.isDefault && (
                   <button
                     onClick={() => handleSetDefault(address.id)}
-                    className="text-blue-600 hover:text-blue-800 text-sm"
+                    className="text-pink-600 hover:text-pink-800 text-sm"
                   >
                     Set as Default
                   </button>
@@ -89,7 +89,7 @@ const AddressList: React.FC = () => {
           <p className="text-gray-500">You don't have any saved addresses.</p>
           <a
             href="/account/addresses/new"
-            className="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
+            className="mt-4 inline-block text-pink-600 hover:text-pink-800 font-medium"
           >
             + Add a new address
           </a>
@@ -139,7 +139,7 @@ const AccountSettings: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors"
           >
             Update Password
           </button>
@@ -154,7 +154,7 @@ const AccountSettings: React.FC = () => {
               id="emailNotifications"
               type="checkbox"
               defaultChecked
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
             />
             <label htmlFor="emailNotifications" className="ml-2 block text-sm text-gray-700">
               Email notifications for orders and updates
@@ -165,7 +165,7 @@ const AccountSettings: React.FC = () => {
               id="smsNotifications"
               type="checkbox"
               defaultChecked
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
             />
             <label htmlFor="smsNotifications" className="ml-2 block text-sm text-gray-700">
               SMS notifications for orders and updates
@@ -175,7 +175,7 @@ const AccountSettings: React.FC = () => {
             <input
               id="marketingEmails"
               type="checkbox"
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
             />
             <label htmlFor="marketingEmails" className="ml-2 block text-sm text-gray-700">
               Marketing emails about promotions and new products
@@ -184,7 +184,7 @@ const AccountSettings: React.FC = () => {
         </div>
         <button
           type="button"
-          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+          className="mt-4 px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors"
         >
           Save Preferences
         </button>
@@ -197,7 +197,7 @@ const AccountSettings: React.FC = () => {
         </p>
         <button
           type="button"
-          className="px-4 py-2 border border-red-500 text-red-600 rounded-md hover:bg-red-50 transition-colors"
+          className="px-4 py-2 border border-red-500 text-red-600 rounded-md hover:bg-pink-50 transition-colors"
         >
           Delete Account
         </button>

@@ -20,7 +20,7 @@ const FeaturedProducts: React.FC = () => {
           </div>
           <Link
             to="/products"
-            className="flex items-center text-blue-600 hover:text-blue-800 transition-colors mt-4 md:mt-0"
+            className="flex items-center text-pink-600 hover:text-pink-800 transition-colors mt-4 md:mt-0"
           >
             View All Products
             <ChevronRight size={16} className="ml-1" />

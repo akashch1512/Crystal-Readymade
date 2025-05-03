@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-semibold mb-4">
-              <span className="text-blue-400">Crystal</span>
-              <span className="text-purple-400">Readymade</span>
+              <span className="text-pink-400">Crystal</span>
+              <span className="text-white">Readymade</span>
             </h3>
             <p className="text-gray-400 mb-4">
               Elevate your style with our luxurious crystal-embedded products. Designed for elegance, crafted for everyday life.
@@ -78,18 +78,18 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin size={18} className="mr-2 mt-1 text-blue-400" />
+                <MapPin size={18} className="mr-2 mt-1 text-pink-400" />
                 <span className="text-gray-400">
                   123 Crystal Avenue<br />
                   New York, NY 10001
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone size={18} className="mr-2 text-blue-400" />
+                <Phone size={18} className="mr-2 text-pink-400" />
                 <span className="text-gray-400">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="mr-2 text-blue-400" />
+                <Mail size={18} className="mr-2 text-pink-400" />
                 <span className="text-gray-400">support@crystalreadymade.com</span>
               </li>
             </ul>
@@ -107,11 +107,11 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-grow px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-gray-200"
+                className="flex-grow px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-pink-500 bg-gray-800 text-gray-200"
               />
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition-colors"
+                className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-r-md transition-colors"
               >
                 Subscribe
               </button>
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
           <p>© {new Date().getFullYear()} CrystalReadymade. All rights reserved.</p>
           <p className="mt-2">
-            Secure payments by <span className="font-medium text-blue-400">Razorpay</span>
+            Secure payments by <span className="font-medium text-pink-400">Razorpay</span>
           </p>
         </div>
       </div>

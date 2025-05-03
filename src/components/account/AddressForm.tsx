@@ -128,7 +128,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
           onChange={handleChange}
           className={`w-full p-2 border ${
             errors.name ? 'border-red-500' : 'border-gray-300'
-          } rounded-md focus:ring-blue-500 focus:border-blue-500`}
+          } rounded-md focus:ring-pink-500 focus:border-pink-500`}
           placeholder="Home, Work, etc."
         />
         {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
@@ -146,7 +146,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
           onChange={handleChange}
           className={`w-full p-2 border ${
             errors.line1 ? 'border-red-500' : 'border-gray-300'
-          } rounded-md focus:ring-blue-500 focus:border-blue-500`}
+          } rounded-md focus:ring-pink-500 focus:border-pink-500`}
           placeholder="Street address, P.O. box, etc."
         />
         {errors.line1 && <p className="mt-1 text-sm text-red-600">{errors.line1}</p>}
@@ -162,7 +162,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
           name="line2"
           value={formData.line2}
           onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+          className="w-full p-2 border border-gray-300 rounded-md focus:ring-pink-500 focus:border-pink-500"
           placeholder="Apartment, suite, unit, building, floor, etc."
         />
       </div>
@@ -180,7 +180,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
             onChange={handleChange}
             className={`w-full p-2 border ${
               errors.city ? 'border-red-500' : 'border-gray-300'
-            } rounded-md focus:ring-blue-500 focus:border-blue-500`}
+            } rounded-md focus:ring-pink-500 focus:border-pink-500`}
           />
           {errors.city && <p className="mt-1 text-sm text-red-600">{errors.city}</p>}
         </div>
@@ -197,7 +197,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
             onChange={handleChange}
             className={`w-full p-2 border ${
               errors.state ? 'border-red-500' : 'border-gray-300'
-            } rounded-md focus:ring-blue-500 focus:border-blue-500`}
+            } rounded-md focus:ring-pink-500 focus:border-pink-500`}
           />
           {errors.state && <p className="mt-1 text-sm text-red-600">{errors.state}</p>}
         </div>
@@ -216,7 +216,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
             onChange={handleChange}
             className={`w-full p-2 border ${
               errors.postalCode ? 'border-red-500' : 'border-gray-300'
-            } rounded-md focus:ring-blue-500 focus:border-blue-500`}
+            } rounded-md focus:ring-pink-500 focus:border-pink-500`}
           />
           {errors.postalCode && <p className="mt-1 text-sm text-red-600">{errors.postalCode}</p>}
         </div>
@@ -230,7 +230,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
             name="country"
             value={formData.country}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full p-2 border border-gray-300 rounded-md focus:ring-pink-500 focus:border-pink-500"
           >
             <option value="United States">United States</option>
             <option value="Canada">Canada</option>
@@ -249,7 +249,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
           name="isDefault"
           checked={formData.isDefault}
           onChange={handleChange}
-          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
         />
         <label htmlFor="isDefault" className="ml-2 block text-sm text-gray-700">
           Make this my default address
@@ -267,7 +267,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
         <button
           type="submit"
           disabled={loading}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-300"
+          className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 transition-colors disabled:bg-pink-300"
         >
           {loading ? 'Saving...' : address ? 'Update Address' : 'Add Address'}
         </button>

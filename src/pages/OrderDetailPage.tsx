@@ -110,7 +110,7 @@ const OrderDetailPage: React.FC = () => {
       <div className="mb-6">
         <Link
           to="/orders"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800"
+          className="inline-flex items-center text-pink-600 hover:text-pink-800"
         >
           <ArrowLeft size={16} className="mr-1" />
           Back to Orders
@@ -133,7 +133,7 @@ const OrderDetailPage: React.FC = () => {
               <div className="relative">
                 <div className="absolute top-4 left-5 w-[calc(100%-2.5rem)] h-0.5 bg-gray-200"></div>
                 <div 
-                  className="absolute top-4 left-5 h-0.5 bg-blue-500 transition-all duration-500"
+                  className="absolute top-4 left-5 h-0.5 bg-pink-500 transition-all duration-500"
                   style={{ width: `calc(${(orderStep - 1) * 33.3}%)` }}
                 ></div>
                 
@@ -142,13 +142,13 @@ const OrderDetailPage: React.FC = () => {
                     <div 
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
                         orderStep >= 1 
-                          ? 'border-blue-500 bg-blue-500 text-white' 
+                          ? 'border-pink-500 bg-pink-500 text-white' 
                           : 'border-gray-300 bg-white text-gray-500'
                       }`}
                     >
                       <ShoppingBag size={18} />
                     </div>
-                    <p className={`mt-2 text-sm ${orderStep >= 1 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>
+                    <p className={`mt-2 text-sm ${orderStep >= 1 ? 'text-pink-600 font-medium' : 'text-gray-500'}`}>
                       Order Placed
                     </p>
                   </div>
@@ -157,7 +157,7 @@ const OrderDetailPage: React.FC = () => {
                     <div 
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
                         orderStep >= 2 
-                          ? 'border-blue-500 bg-blue-500 text-white' 
+                          ? 'border-pink-500 bg-pink-500 text-white' 
                           : 'border-gray-300 bg-white text-gray-500'
                       }`}
                     >
@@ -165,7 +165,7 @@ const OrderDetailPage: React.FC = () => {
                         {orderStep >= 2 ? '✓' : '2'}
                       </span>
                     </div>
-                    <p className={`mt-2 text-sm ${orderStep >= 2 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>
+                    <p className={`mt-2 text-sm ${orderStep >= 2 ? 'text-pink-600 font-medium' : 'text-gray-500'}`}>
                       Processing
                     </p>
                   </div>
@@ -174,13 +174,13 @@ const OrderDetailPage: React.FC = () => {
                     <div 
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
                         orderStep >= 3 
-                          ? 'border-blue-500 bg-blue-500 text-white' 
+                          ? 'border-pink-500 bg-pink-500 text-white' 
                           : 'border-gray-300 bg-white text-gray-500'
                       }`}
                     >
                       <Truck size={18} />
                     </div>
-                    <p className={`mt-2 text-sm ${orderStep >= 3 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>
+                    <p className={`mt-2 text-sm ${orderStep >= 3 ? 'text-pink-600 font-medium' : 'text-gray-500'}`}>
                       Shipped
                     </p>
                   </div>
@@ -189,13 +189,13 @@ const OrderDetailPage: React.FC = () => {
                     <div 
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
                         orderStep >= 4 
-                          ? 'border-blue-500 bg-blue-500 text-white' 
+                          ? 'border-pink-500 bg-pink-500 text-white' 
                           : 'border-gray-300 bg-white text-gray-500'
                       }`}
                     >
                       <Check size={18} />
                     </div>
-                    <p className={`mt-2 text-sm ${orderStep >= 4 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>
+                    <p className={`mt-2 text-sm ${orderStep >= 4 ? 'text-pink-600 font-medium' : 'text-gray-500'}`}>
                       Delivered
                     </p>
                   </div>
@@ -204,9 +204,9 @@ const OrderDetailPage: React.FC = () => {
               
               {/* Tracking Info */}
               {order.status === 'shipped' && order.trackingNumber && (
-                <div className="mt-8 p-4 bg-blue-50 border border-blue-100 rounded-md">
-                  <h3 className="font-medium text-blue-800 mb-2">Tracking Information</h3>
-                  <p className="text-blue-600">
+                <div className="mt-8 p-4 bg-pink-50 border border-pink-100 rounded-md">
+                  <h3 className="font-medium text-pink-800 mb-2">Tracking Information</h3>
+                  <p className="text-pink-600">
                     Tracking Number: <span className="font-medium">{order.trackingNumber}</span>
                   </p>
                 </div>
@@ -227,7 +227,7 @@ const OrderDetailPage: React.FC = () => {
               )}
             </div>
           ) : (
-            <div className="mt-8 p-4 bg-red-50 border border-red-100 rounded-md">
+            <div className="mt-8 p-4 bg-pink-50 border border-red-100 rounded-md">
               <h3 className="font-medium text-red-800 mb-2 flex items-center">
                 <X size={16} className="mr-1" />
                 Order Cancelled
