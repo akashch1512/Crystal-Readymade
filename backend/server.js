@@ -21,7 +21,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 // app.use('/api/orders', orderRoutes);
-app.use('/api/payments', paymentRoutes);
+app.use('/api/payment', paymentRoutes);
+// app.use('/api/payment', require('./routes/paymentRoutes'));
 
 // DB connection
 mongoose.connect(process.env.MONGO_URI, {

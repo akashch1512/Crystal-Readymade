@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useCart } from '../../contexts/CartContext';
 import { useOrders } from '../../contexts/OrderContext';
-import { createRazorpayOrder, initRazorpay } from '../../services/razorpay';
+import { createRazorpayOrder} from '../../services/razorpay';
+import { loadRazorpayScript } from '../../utils/loadRazorpay'
+
 
 interface CheckoutFormProps {
   onSuccess: (orderId: string) => void;
@@ -33,44 +35,38 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+  
     if (!selectedAddress) {
       setError('Please select a shipping address');
       return;
     }
-    
+  
     if (items.length === 0) {
       setError('Your cart is empty');
       return;
     }
-    
+  
     try {
       setLoading(true);
       setError('');
+  
+      if (paymentMethod !== 'cod') {
+        const razorpayLoaded = await loadRazorpayScript();
       
-      // In a real app, we'd create an order on the backend first
-      // For this example, we'll simulate Razorpay integration
-      
-      if (paymentMethod === 'cod') {
-        // For cash on delivery, create order directly
-        const { success, orderId } = await createOrder('cod');
-        
-        if (success && orderId) {
-          onSuccess(orderId);
-        } else {
-          setError('Failed to create order. Please try again.');
+        if (!razorpayLoaded || !(window as any).Razorpay) {
+          setError('Failed to load Razorpay. Please try again later.');
+          return;
         }
-      } else {
-        // For other payment methods, use Razorpay
-        const orderId = await createRazorpayOrder(total * 100); // Convert to paisa
-        
+      
+        const razorpayOrderId = await createRazorpayOrder(total * 100);
+      
         const options = {
-          key: 'rzp_test_mockKey', // This would be your actual Razorpay key in production
-          amount: total * 100, // In paisa
+          key: 'rzp_live_bGTn7dpj6KD55L',
+          amount: total * 100,
           currency: 'INR',
           name: 'CrystalReadymade',
           description: 'Payment for your order',
-          order_id: orderId,
+          order_id: razorpayOrderId,
           prefill: {
             name: user?.name || '',
             email: user?.email || '',
@@ -78,28 +74,40 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
           },
           notes: {
             address_id: selectedAddress,
-            shipping_method: 'standard',
           },
           theme: {
-            color: '#3B82F6', // pink color
+            color: '#3B82F6',
           },
-        };
-        
-        const razorpayInstance = await initRazorpay(options);
-        
-        razorpayInstance.on('payment.success', async (response: any) => {
-          // In a real app, we'd verify this payment on the backend
-          // For this example, we'll assume the payment is successful
-          const { success, orderId } = await createOrder(paymentMethod);
-          
-          if (success && orderId) {
-            onSuccess(orderId);
-          } else {
-            setError('Failed to create order. Please try again.');
+          handler: async function (response: any) {
+            const verified = await verifyPayment(
+              response.razorpay_payment_id,
+              response.razorpay_order_id,
+              response.razorpay_signature
+            );
+      
+            if (!verified) {
+              setError('Payment verification failed. Please contact support.');
+              return;
+            }
+      
+            const { success, orderId } = await createOrder(paymentMethod);
+            if (success && orderId) {
+              clearCart();
+              onSuccess(orderId);
+            } else {
+              setError('Failed to create order. Please try again.');
+            }
+          },
+          modal: {
+            ondismiss: function () {
+              setLoading(false);
+              console.log('Payment popup closed');
+            }
           }
-        });
-        
-        razorpayInstance.open();
+        };
+      
+        const rzp = new (window as any).Razorpay(options);
+        rzp.open();
       }
     } catch (err) {
       console.error('Checkout error:', err);
@@ -108,6 +116,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSuccess }) => {
       setLoading(false);
     }
   };
+  
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
