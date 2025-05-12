@@ -35,7 +35,7 @@ const Header: React.FC = () => {
 
     if (query.trim().length > 2) {
       const results = searchProducts(query);
-      setSearchResults(results.slice(0, 5)); // Limit to 5 results
+      setSearchResults((results || []).slice(0, 5));// Limit to 5 results
       setShowSearchResults(true);
     } else {
       setShowSearchResults(false);
@@ -158,7 +158,7 @@ const Header: React.FC = () => {
                 <div className="relative group">
                   <button className="flex items-center text-gray-700 hover:text-pink-600">
                     <User size={22} />
-                    <span className="ml-1">{user?.name.split(' ')[0]}</span>
+                    <span className="ml-1">{user?.name ? user.name.split(' ')[0] : 'Guest'}</span>
                   </button>
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20 hidden group-hover:block">
                     <Link to="/account" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
@@ -166,7 +166,7 @@ const Header: React.FC = () => {
                     </Link>
                     <Link to="/orders" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                       My Orders
-                    </Link>
+                    </Link> 
                     {user?.role === 'admin' && (
                       <Link to="/admin" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                         Admin Dashboard

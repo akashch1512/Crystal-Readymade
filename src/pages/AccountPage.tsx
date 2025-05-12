@@ -4,24 +4,34 @@ import AccountSidebar from '../components/account/AccountSidebar';
 import ProfileForm from '../components/account/ProfileForm';
 import AddressForm from '../components/account/AddressForm';
 import { useAuth } from '../contexts/AuthContext';
+import {  toast } from 'react-toastify'
 
 const AddressList: React.FC = () => {
-  const { user } = useAuth();
+  const { user, refreshUser } = useAuth();
   
   const addresses = user?.addresses || [];
   
-  // Mock function to update addresses
-  const handleSetDefault = (addressId: string) => {
-    // In a real app, this would make an API call to update the address
-    console.log('Setting address as default:', addressId);
+  //  function to update addresses
+  const handleSetDefault = async (addressId: string) => {
+    try {
+      await fetch(`/api/addresses/${addressId}/set-default`, { method: 'PATCH' });
+      await refreshUser();
+      toast.success('Default address updated'); // if using a toast library
+    } catch (error) {
+      console.error('Failed to set default address:', error);
+    }
   };
   
-  // Mock function to delete an address
-  const handleDelete = (addressId: string) => {
-    // In a real app, this would make an API call to delete the address
-    console.log('Deleting address:', addressId);
+  //  function to delete an address
+  const handleDelete = async (addressId: string) => {
+    try {
+      await fetch(`/api/addresses/${addressId}`, { method: 'DELETE' });
+      await refreshUser();
+    } catch (error) {
+      console.error('Failed to delete address:', error);
+    }
   };
-  
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -47,7 +57,7 @@ const AddressList: React.FC = () => {
                 <div className="mb-2 inline-block px-2 py-1 bg-pink-100 text-pink-800 text-xs font-medium rounded-md">
                   Default Address
                 </div>
-              )}
+              )} 
               
               <h3 className="font-medium">{address.name}</h3>
               <address className="not-italic text-gray-600 my-2">

@@ -1,26 +1,23 @@
-const express = require('express');
-const Razorpay = require('razorpay');
-const crypto = require('crypto');
-
+import express from 'express';
+import Razorpay from 'razorpay';
+import crypto from 'crypto';
+import dotenv from "dotenv";
+dotenv.config();
 const router = express.Router();
 
-// Initialize Razorpay instance
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_SECRET,
 });
 
-// ✅ Create Razorpay Order
 router.post('/create-order', async (req, res) => {
   try {
     const { amount } = req.body;
-
     if (!amount || isNaN(amount)) {
       return res.status(400).json({ success: false, message: 'Invalid amount' });
     }
 
-    const amountInPaise = Math.round(Number(amount) * 100); // ₹499.99 → 49999
-
+    const amountInPaise = Math.round(Number(amount) * 100);
     const options = {
       amount: amountInPaise,
       currency: 'INR',
@@ -35,10 +32,8 @@ router.post('/create-order', async (req, res) => {
   }
 });
 
-// ✅ Verify Razorpay Payment Signature
 router.post('/verify-payment', (req, res) => {
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
-
   if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
     return res.status(400).json({ success: false, message: 'Missing payment details' });
   }
@@ -55,4 +50,4 @@ router.post('/verify-payment', (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
