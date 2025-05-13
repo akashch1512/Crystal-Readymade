@@ -61,7 +61,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
-  );
+  );  
 };
 
 export default ProductGrid;

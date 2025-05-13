@@ -32,7 +32,7 @@ export interface Product {
   category: string;
   brand: string;
   tags: string[];
-  inStock: boolean;
+  stock: number;
   quantity: number;
   ratings: number;
   reviews: Review[];

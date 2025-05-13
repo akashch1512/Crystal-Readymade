@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { WishlistItem, Product } from '../types';
+import { WishlistItem } from '../types';
 
 interface WishlistContextValue {
   items: WishlistItem[];
@@ -25,15 +25,24 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [items, setItems] = useState<WishlistItem[]>([]);
 
   useEffect(() => {
-    // Load wishlist from localStorage on initial load
     const savedWishlist = localStorage.getItem('wishlist');
     if (savedWishlist) {
-      setItems(JSON.parse(savedWishlist));
+      try {
+        const parsedWishlist = JSON.parse(savedWishlist);
+        if (Array.isArray(parsedWishlist)) {
+          setItems(parsedWishlist);
+        } else {
+          console.warn('Invalid wishlist data in localStorage. Resetting.');
+          setItems([]);
+        }
+      } catch (error) {
+        console.error('Failed to parse wishlist from localStorage:', error);
+        setItems([]);
+      }
     }
   }, []);
 
   useEffect(() => {
-    // Save to localStorage when items change
     localStorage.setItem('wishlist', JSON.stringify(items));
   }, [items]);
 

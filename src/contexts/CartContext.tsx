@@ -88,7 +88,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const existingItemIndex = prevItems.findIndex(
         item => item.productId === product.id
       );
-      
+  
       if (existingItemIndex >= 0) {
         // Update quantity of existing item
         const updatedItems = [...prevItems];
@@ -107,13 +107,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             name: product.name,
             price: product.price,
             salePrice: product.salePrice,
-            image: product.images[0],
+            image: product.images?.[0] ?? 'https://via.placeholder.com/300',
             quantity
           }
         ];
       }
     });
   };
+  
 
   const updateQuantity = (itemId: string, quantity: number) => {
     if (quantity <= 0) {

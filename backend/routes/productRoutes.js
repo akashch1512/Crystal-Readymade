@@ -1,4 +1,7 @@
 import express from 'express';
+import Product from '../models/Product.js';
+import Category from '../models/Category.js'; // Import Category model
+import Brand from '../models/Brand.js'; // Import Brand model
 import {
   createProduct,
   getAllProducts,
@@ -11,15 +14,37 @@ import { adminProtect } from '../middlewares/adminProtect.js';  // Import adminP
 
 const router = express.Router();
 
-// Route to get all products - no admin protection needed
+// Get all categories
+router.get("/categories", async (req, res) => {
+  try {
+    const categories = await Product.distinct("category");
+    res.json(categories);  // ✅ Just return the array directly
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// Get all brands
+router.get("/brands", async (req, res) => {
+  try {
+    const brands = await Product.distinct("brand");
+    res.json(brands);  // ✅ Just return the array directly
+  } catch (error) {
+    console.error("Error fetching brands:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// Route to get all products
 router.route('/')
   .get(getAllProducts)
-  .post(protect, adminProtect, createProduct);  // Ensure user is authenticated and is an admin
+  .post(protect, adminProtect, createProduct);
 
-// Route for a specific product by ID - allows GET, PUT, DELETE with admin access
+// Route for a specific product by ID
 router.route('/:id')
   .get(getProductById)
-  .put(protect, adminProtect, updateProduct)  // Ensure user is authenticated and is an admin
-  .delete(protect, adminProtect, deleteProduct);  // Ensure user is authenticated and is an admin
+  .put(protect, adminProtect, updateProduct)
+  .delete(protect, adminProtect, deleteProduct);
 
-export default router;
+  export default router;

@@ -31,11 +31,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
   
   const isWishlisted = isInWishlist(product.id);
-  
-  // Calculate discount percentage if sale price exists
+
   const discountPercentage = product.salePrice 
     ? Math.round(((product.price - product.salePrice) / product.price) * 100) 
     : 0;
+
+    const isOutOfStock = typeof product.stock !== 'number' || product.stock <= 0;
 
   return (
     <Link 
@@ -45,7 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Product Image */}
       <div className="relative pt-[100%]">
         <img 
-          src={product.images[0]} 
+          src={product.images?.[0] || 'https://via.placeholder.com/300'}
           alt={product.name}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -64,6 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               onClick={handleAddToCart}
               className="bg-white text-gray-800 p-2 rounded-full shadow-md hover:bg-pink-500 hover:text-white transition-colors"
               aria-label="Add to cart"
+              disabled={isOutOfStock}
             >
               <ShoppingBag size={20} />
             </button>
@@ -99,14 +101,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           
           {/* Rating */}
           <div className="ml-auto flex items-center">
-            <div className="text-sm text-gray-600">{product.ratings.toFixed(1)}</div>
+            <div className="text-sm text-gray-600">{product.ratings?.toFixed(1) ?? '0.0'}</div>
             <div className="ml-1 text-yellow-400">★</div>
           </div>
         </div>
       </div>
       
-      {/* Availability */}
-      {!product.inStock && (
+      {/* Out of Stock Overlay */}
+      {isOutOfStock && (
         <div className="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center">
           <span className="bg-gray-800 text-white px-4 py-2 rounded-md">Out of Stock</span>
         </div>
