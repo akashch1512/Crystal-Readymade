@@ -10,11 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "http-proxy-middleware": "^3.0.5",
-=======
     "axios": "^1.9.0",
->>>>>>> fec9f0f5 (hi)
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
