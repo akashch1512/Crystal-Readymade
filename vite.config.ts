@@ -9,7 +9,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'http://localhost:5000', // point to your Express backend
+      '/api': 'https://crystal-readymade-production.up.railway.app', // point to your Express backend
     }
   }
 });

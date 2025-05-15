@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { Product, FilterOptions } from "../types";
 
-// ✅ Define context value interface
 interface ProductContextValue {
   products: Product[];
   categories: string[];
@@ -22,7 +21,6 @@ interface ProductContextValue {
   deleteProduct: (id: string) => Promise<void>;
 }
 
-// ✅ Create context with proper default fallback values
 const ProductContext = createContext<ProductContextValue>({
   products: [],
   categories: [],
@@ -39,10 +37,8 @@ const ProductContext = createContext<ProductContextValue>({
   deleteProduct: async () => {},
 });
 
-// ✅ Hook to use products
 export const useProducts = () => useContext(ProductContext);
 
-// ✅ Provider component
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -51,35 +47,38 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
   const [brands, setBrands] = useState<string[]>([]);
   const [filterOptions, setFilterOptions] = useState<FilterOptions>({});
 
-  // ✅ Fetch products, categories, and brands
+  const fetchWithRetry = async (url: string, options = {}, retries = 3) => {
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response;
+    } catch (error) {
+      if (retries > 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        return fetchWithRetry(url, options, retries - 1);
+      }
+      throw error;
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productRes = await fetch("http://localhost:5000/api/products");
-        const categoryRes = await fetch(
-          "http://localhost:5000/api/products/categories"
-        );
-        const brandRes = await fetch(
-          "http://localhost:5000/api/products/brands"
-        );
+        const [productRes, categoryRes, brandRes] = await Promise.all([
+          fetchWithRetry("/api/products"),
+          fetchWithRetry("/api/products/categories"),
+          fetchWithRetry("/api/products/brands")
+        ]);
 
-        const productData = await productRes.json();
-        const categoryData = await categoryRes.json();
-        const brandData = await brandRes.json();
+        const [productData, categoryData, brandData] = await Promise.all([
+          productRes.json(),
+          categoryRes.json(),
+          brandRes.json()
+        ]);
 
-        if (productData && categoryData && brandData) {
-          // ✅ Optional: handle MongoDB _id -> id mapping
-          const productsWithId = productData.map((p: any) => ({
-            ...p,
-            id: p.id || p._id, // support both
-          }));
-
-          setProducts(productsWithId);
-          setCategories(categoryData);
-          setBrands(brandData);
-        } else {
-          console.error("Error: Missing data from API responses");
-        }
+        setProducts(productData.map((p: any) => ({ ...p, id: p.id || p._id })));
+        setCategories(categoryData);
+        setBrands(brandData);
       } catch (error) {
         console.error("Failed to fetch product data:", error);
       }
@@ -88,66 +87,51 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
     fetchData();
   }, []);
 
-  // ✅ Filter logic
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
     if (filterOptions.category) {
-      result = result.filter(
-        (product) => product.category === filterOptions.category
-      );
+      result = result.filter(p => p.category === filterOptions.category);
     }
 
     if (filterOptions.brand) {
-      result = result.filter(
-        (product) => product.brand === filterOptions.brand
-      );
+      result = result.filter(p => p.brand === filterOptions.brand);
     }
 
     if (filterOptions.minPrice !== undefined) {
-      result = result.filter((product) => {
-        const price = product.salePrice || product.price;
+      result = result.filter(p => {
+        const price = p.salePrice || p.price;
         return price >= filterOptions.minPrice!;
       });
     }
 
     if (filterOptions.maxPrice !== undefined) {
-      result = result.filter((product) => {
-        const price = product.salePrice || product.price;
+      result = result.filter(p => {
+        const price = p.salePrice || p.price;
         return price <= filterOptions.maxPrice!;
       });
     }
 
     if (filterOptions.rating !== undefined) {
-      result = result.filter(
-        (product) => product.ratings >= filterOptions.rating!
-      );
+      result = result.filter(p => p.ratings >= filterOptions.rating!);
     }
 
-    if (filterOptions.tags && filterOptions.tags.length > 0) {
-      result = result.filter((product) =>
-        filterOptions.tags!.some((tag) => product.tags.includes(tag))
+    if (filterOptions.tags?.length) {
+      result = result.filter(p =>
+        filterOptions.tags!.some(tag => p.tags.includes(tag))
       );
     }
 
     if (filterOptions.sortBy) {
       switch (filterOptions.sortBy) {
         case "price-asc":
-          result.sort(
-            (a, b) => (a.salePrice || a.price) - (b.salePrice || b.price)
-          );
+          result.sort((a, b) => (a.salePrice || a.price) - (b.salePrice || b.price));
           break;
         case "price-desc":
-          result.sort(
-            (a, b) => (b.salePrice || b.price) - (a.salePrice || a.price)
-          );
+          result.sort((a, b) => (b.salePrice || b.price) - (a.salePrice || a.price));
           break;
         case "newest":
-          result.sort(
-            (a, b) =>
-              new Date(b.createdAt).getTime() -
-              new Date(a.createdAt).getTime()
-          );
+          result.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
           break;
         case "popular":
           result.sort((a, b) => b.ratings - a.ratings);
@@ -158,62 +142,46 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
     return result;
   }, [filterOptions, products]);
 
-  // ✅ Utility functions
-  const getProductById = (id: string): Product | undefined =>
-    products.find((product) => product.id === id || product._id === id);
+  const getProductById = (id: string) => 
+    products.find(p => p.id === id || p._id === id);
 
-  const getProductBySlug = (slug: string): Product | undefined =>
-    products.find((product) => product.slug === slug);
+  const getProductBySlug = (slug: string) => 
+    products.find(p => p.slug === slug);
 
-  const searchProducts = (query: string): Product[] => {
+  const searchProducts = (query: string) => {
     if (!query.trim()) return [];
-
-    const searchTerms = query.toLowerCase().split(" ");
-
-    return products.filter((product) => {
-      const searchableText = `
-        ${product.name}
-        ${product.description}
-        ${product.category}
-        ${product.brand}
-        ${product.tags.join(" ")}
+    const terms = query.toLowerCase().split(" ");
+    return products.filter(p => {
+      const text = `
+        ${p.name}
+        ${p.description}
+        ${p.category}
+        ${p.brand}
+        ${p.tags.join(" ")}
       `.toLowerCase();
-
-      return searchTerms.some((term) => searchableText.includes(term));
+      return terms.some(term => text.includes(term));
     });
   };
 
-  const clearFilters = () => {
-    setFilterOptions({});
-  };
+  const clearFilters = () => setFilterOptions({});
 
   const deleteProduct = async (productId: string) => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/products/${productId}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
-          },
-        }
-      );
+      const response = await fetchWithRetry(`/api/products/${productId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+        },
+      });
 
-      if (!response.ok) {
-        throw new Error("Failed to delete product");
-      }
-
-      // ✅ Remove deleted product from state
-      setProducts((prev) =>
-        prev.filter((product) => product.id !== productId)
-      );
+      if (!response.ok) throw new Error("Failed to delete product");
+      setProducts(prev => prev.filter(p => p.id !== productId));
     } catch (error) {
       console.error("Error deleting product:", error);
     }
   };
 
-  // ✅ Provide context value
   return (
     <ProductContext.Provider
       value={{
