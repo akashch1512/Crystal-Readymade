@@ -14,7 +14,7 @@ const AddressList: React.FC = () => {
   //  function to update addresses
   const handleSetDefault = async (addressId: string) => {
     try {
-      await fetch(`/api/addresses/${addressId}/set-default`, { method: 'PATCH' });
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/addresses/${addressId}/set-default`, { method: 'PATCH' });
       await refreshUser();
       toast.success('Default address updated'); // if using a toast library
     } catch (error) {
@@ -25,7 +25,7 @@ const AddressList: React.FC = () => {
   //  function to delete an address
   const handleDelete = async (addressId: string) => {
     try {
-      await fetch(`/api/addresses/${addressId}`, { method: 'DELETE' });
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/addresses/${addressId}`, { method: 'DELETE' });
       await refreshUser();
     } catch (error) {
       console.error('Failed to delete address:', error);

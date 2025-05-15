@@ -74,7 +74,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ address, onSubmit }) => {
       setLoading(true);
       const token = localStorage.getItem('token');
 
-      const response = await fetch('/api/addresses', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/addresses`, {
         method: address ? 'PUT' : 'POST',
         headers: {
           'Content-Type': 'application/json',

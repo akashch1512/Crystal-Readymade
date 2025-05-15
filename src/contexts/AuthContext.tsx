@@ -48,9 +48,9 @@
     const login = async (email: string, password: string): Promise<boolean> => {
       try {
         setLoading(true);
-        const response = await axios.post('/api/auth/login', { email, password });
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/login`, { email, password });
         const { user: loggedInUser, token } = response.data;
-
+        // crystal-readymade-production.up.railway.app
         // Save user and token to localStorage
         setUser(loggedInUser);
         localStorage.setItem('user', JSON.stringify(loggedInUser));
@@ -74,7 +74,7 @@
     const register = async (name: string, email: string, password: string): Promise<boolean> => {
       try {
         setLoading(true);
-        const response = await axios.post('/api/auth/register', { name, email, password });
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, { name, email, password });
         const { user: newUser, token } = response.data;
 
         // Save user and token to localStorage
@@ -106,7 +106,7 @@
 
     const refreshUser = async (): Promise<void> => {
       try {
-        const res = await axios.get('/api/user/me');
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/user/me`);
         const updatedUser: User = res.data.user;
     
         // Sanity check: Ensure addresses is always an array

@@ -61,14 +61,18 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const API_BASE = import.meta.env.VITE_API_BASE_URL;
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
+
         const [productRes, categoryRes, brandRes] = await Promise.all([
-          fetchWithRetry("/api/products"),
-          fetchWithRetry("/api/products/categories"),
-          fetchWithRetry("/api/products/brands")
+          fetchWithRetry(`${API_BASE}/api/products`),
+          fetchWithRetry(`${API_BASE}/api/products/categories`),
+          fetchWithRetry(`${API_BASE}/api/products/brands`)
         ]);
+
 
         const [productData, categoryData, brandData] = await Promise.all([
           productRes.json(),
@@ -167,7 +171,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const deleteProduct = async (productId: string) => {
     try {
-      const response = await fetchWithRetry(`/api/products/${productId}`, {
+      const response = await fetchWithRetry(`${API_BASE}/api/products/${productId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

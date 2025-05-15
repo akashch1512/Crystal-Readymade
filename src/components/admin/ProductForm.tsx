@@ -134,7 +134,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit }) => {
 
       const token = localStorage.getItem("token");
 
-      const response = await fetch("/api/products", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
