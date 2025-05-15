@@ -12,7 +12,9 @@ import { adminProtect } from './middlewares/adminProtect.js';  // Import your ad
 dotenv.config();
 const app = express();
 const allowedOrigins = [
-  'crystal-readymade-production.up.railway.app'
+  'https://crystal-readymade-production.up.railway.app',
+  'https://crystalreadymades.com/',
+  'localhost:5137'
 ];
 
 app.use(cors({
