@@ -17,7 +17,9 @@ app.use(cors({
     const allowedOrigins = [
       'https://crystal-readymade-production.up.railway.app',
       'https://crystalreadymades.com',
-      'http://localhost:5137'
+      'https://www.crystalreadymades.com',
+      'http://localhost:5137',
+      'http://127.0.0.1:5173'
     ];
 
     if (!origin || allowedOrigins.includes(origin)) {
